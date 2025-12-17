@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap');
-
+/* Общие стили и сброс */
 * {
     margin: 0;
     padding: 0;
@@ -7,446 +6,627 @@
 }
 
 body {
-font-family: "BBH Bartle", sans-serif;
-    background: radial-gradient(circle at top, #f6fff4, #dfeedd);
-    color: #444;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #e0e0e0;
+    line-height: 1.6;
     min-height: 100vh;
-
-    display: flex;
-    flex-direction: column; 
 }
 
-/* ОБЩИЙ КОНТЕЙНЕР */
-.tv-wrapper {
+/* Контейнеры */
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-container2 {
     display: flex;
-    margin: 100px;
     flex-direction: column;
-    align-items: center;
+    gap: 60px;
+    padding: 40px 0;
 }
 
-/* КОРПУС ТЕЛЕВИЗОРА */
-.tv-frame {
-    width: 1100px;
-    height: 620px;
-    background: linear-gradient(#f7f7f7, #dcdcdc);
-    border-radius: 26px;
-    padding: 18px;
-
-    border: 1px solid #bfbfbf;
-
-    box-shadow:
-        inset 0 2px 0 rgba(255,255,255,0.9),
-        0 25px 60px rgba(0,0,0,0.25);
+/* Header */
+.header-container {
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ВЕРХНЯЯ ПАНЕЛЬ */
-.tv-titlebar {
-    height: 34px;
-    background: linear-gradient(#edf4ed, #dbe7db);
-    border-radius: 18px 18px 6px 6px;
-    border: 1px solid #c6cfc6;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 14px;
-    font-size: 13px;
-    color: #333;
-}
-
-/* КНОПКИ */
-.tv-lights span {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin-left: 6px;
-    border-radius: 50%;
-    background: linear-gradient(#ffffff, #cfcfcf);
-    border: 1px solid #b5b5b5;
-}
-/* --------------------- */
-.preview-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    padding: 80px 40px;
-}
-
-.preview-card {
-    aspect-ratio: 4 / 3;
-    border-radius: 22px;
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    height: 500px;
     overflow: hidden;
-
-    background: linear-gradient(#ffffff, #eef3ee);
-    border: 1px solid #cfd6cf;
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.7),
-        0 14px 30px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.preview-card img {
+.hero-section img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* ---------------------- */
-
-.single-glass {
-    min-width: 900px;
-    margin: 50px;
-    border-radius: 28px;
-    overflow: hidden;
-
-    border: 1px solid #cfd6cf;
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.8),
-        0 22px 50px rgba(0,0,0,0.2);
+.hero-section:hover img {
+    transform: scale(1.05);
 }
 
-.single-glass img {
-    width: 100%;
-    display: block;
+/* Lotus Text Section */
+.lotus-text {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.lotus-text h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
 
+.lotus-text p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #b0b0b0;
+}
 
-/* ------------------ */
-.quad-layout {
+/* TV Wrapper */
+.tv-wrapper {
     display: flex;
-    gap: 24px;
-    max-width: 1200px;
-    margin: 80px auto;
+    justify-content: center;
+    padding: 30px 0;
 }
 
-/* ЛЕВАЯ КОЛОНКА */
+.tv-frame {
+    width: 800px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border: 2px solid #444;
+}
+
+.tv-titlebar {
+    background: linear-gradient(to bottom, #4a4a4a, #2d2d2d);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+}
+
+.tv-titlebar span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tv-lights {
+    display: flex;
+    gap: 8px;
+}
+
+.tv-lights span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.tv-lights span:nth-child(1) { background: #ff5f57; }
+.tv-lights span:nth-child(2) { background: #ffbd2e; }
+.tv-lights span:nth-child(3) { background: #28ca42; }
+
+.tv-screen {
+    position: relative;
+    padding: 20px;
+    background: #000;
+}
+
+.tv-screen img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tv-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.tv-overlay h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.tv-overlay p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Glass Strip */
+.glass-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px 0;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.glass-card h3 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.glass-card p {
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+/* Quad Layout */
+.quad-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    height: 600px;
+}
+
 .quad-left {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
-/* МАЛЫЙ КВАДРАТ */
 .quad-small {
-    width: 300px;
-    height: 300px;      /* фиксированный квадрат */
-    border-radius: 20px;
+    flex: 1;
     overflow: hidden;
-
-    background: #fff;
-    border: 1px solid #cfd6cf;
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.8),
-        0 10px 25px rgba(0,0,0,0.14);
+    border-radius: 10px;
 }
 
 .quad-small img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.3s ease;
 }
 
-/* ПРАВЫЙ БОЛЬШОЙ КВАДРАТ */
+.quad-small:hover img {
+    transform: scale(1.05);
+}
+
 .quad-right {
-    flex: 1;                 /* занимает всё оставшееся место */
-    aspect-ratio: 1 / 1;     /* квадрат */
-    border-radius: 22px;
     overflow: hidden;
-
-    background: #fff;
-    border: 1px solid #cfd6cf;
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.8),
-        0 12px 28px rgba(0,0,0,0.16);
+    border-radius: 10px;
 }
 
 .quad-right img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.3s ease;
 }
 
+.quad-right:hover img {
+    transform: scale(1.05);
+}
 
+/* Preview Row */
+.preview-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px 0;
+}
 
-/* ЭКРАН */
-.tv-screen {
-    position: relative;
-    margin-top: 14px;
-    width: 100%;
-    height: calc(100% - 48px);
-
-    background: #000;
-    border-radius: 18px;
+.preview-card {
+    height: 300px;
     overflow: hidden;
-
-    box-shadow:
-        inset 0 0 40px rgba(0,0,0,0.6);
+    border-radius: 10px;
+    position: relative;
 }
 
-/* ИЗОБРАЖЕНИЕ */
-.tv-screen img {
+.preview-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.preview-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Single Glass */
+.single-glass {
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.single-glass img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* ЛЕГКИЙ GLASS OVERLAY */
-.tv-overlay {
-    position: absolute;
-    bottom: 30px;
-    left: 40px;
-
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(6px);
-    padding: 18px 26px;
-    border-radius: 14px;
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.4),
-        0 10px 25px rgba(0,0,0,0.25);
-}
-
-.tv-overlay h1 {
-    font-size: 28px;
-    font-weight: normal;
-    margin-bottom: 6px;
-}
-
-.tv-overlay p {
-    font-size: 14px;
-    letter-spacing: 1px;
-    opacity: 0.9;
-}
-
-
-/* HEADER */
-header {
-    background: #ffffff;
-    padding: 20px 0;
-}
-
-.logo-text {
-    text-align: center;
-    font-size: 32px;
-    letter-spacing: 2px;
-}
-
-/* MAIN */
-.main-container {
-    display: flex;
-    justify-content: center;
-}
-
-/* WINDOWS 7 PANEL */
-.main-container2 {
-    max-width: 1400px;
-    width: 100%;
-    margin: 40px;
-    padding: 40px;
-
-    background: linear-gradient(#ffffff, #f2f7f2);
-    border: 1px solid #cfcfcf;
-    border-radius: 14px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.12),
-        inset 0 1px 0 #ffffff;
-}
-
-/* fake title bar */
-.main-container2::before {
-    content: "Explorer";
-    display: block;
-    margin: -40px -40px 40px;
-    padding: 12px 20px;
-
-    background: linear-gradient(#e9f0e9, #dfe8df);
-    border-bottom: 1px solid #cfcfcf;
-    border-radius: 14px 14px 0 0;
-
-    font-size: 14px;
-    color: #333;
-}
-
-/* HERO */
-.hero-section {
-    min-height: 40vh; /* Уменьшаем высоту */
-    display: flex;
-    align-items: center;
-    padding: 40px 0; /* Добавляем вертикальные отступы */
-}
-
-.hero-section img {
-    width: 100%;
-    border-radius: 12px;
-    max-height: 60vh; /* Ограничиваем высоту изображения */
-    object-fit: cover;
-}
-/* TEXT */
+/* Netherlands Text */
 .netherlands-text {
-    max-height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #d0d0d0;
 }
 
-.netherlands-text p {
-    max-width: 900px;
-    margin: 5px;
-    font-size: 26px;
-    line-height: 1.9;
-    text-shadow: 0 1px 0 #fff;
-}
-
-/* FEATURES */
+/* Features Section */
 .features-section {
-    min-height: 30vh;
-    display: flex;
-    justify-content: space-between;
-    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.features-content {
+    padding-right: 40px;
 }
 
 .features-title {
-    font-size: 36px;
+    font-size: 2.5em;
+    color: #fff;
     margin-bottom: 20px;
+    font-weight: 300;
 }
 
 .features-description {
-    max-width: 400px;
+    font-size: 1.1em;
+    color: #b0b0b0;
+    line-height: 1.7;
 }
 
 .features-products {
-    display: flex;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .feature-item {
-    width: 260px;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
 }
 
 .feature-image img {
     width: 100%;
-    border-radius: 10px;
-}
-
-/* PRODUCTS */
-.products-3x3 {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding: 80px;
-}
-
-.product-box {
-    background: #ffffff;
-    border: 1px solid #d8d8d8;
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
-
-    box-shadow:
-        inset 0 1px 0 #ffffff,
-        0 4px 10px rgba(0,0,0,0.08);
-}
-
-.product-box img {
-    width: 100%;
-    height: 240px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
-/* FOOTER */
-.footer {
-    min-height: 100vh;
-    background: linear-gradient(#f2f2f2, #ffffff);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
+.feature-item:hover .feature-image img {
+    transform: scale(1.05);
 }
 
-/* GLASS STRIP */
-.glass-strip {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    padding: 60px 40px;
-        margin: 100px;
-}
-
-.glass-card {
-    width: 280px;
-    padding: 22px;
-    border-radius: 16px;
-
-    background: rgba(255,255,255,0.35);
-    backdrop-filter: blur(8px);
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.6),
-        0 10px 25px rgba(0,0,0,0.12);
-
-    text-align: center;
-}
-
-.glass-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.glass-card p {
-    font-size: 14px;
-    opacity: 0.85;
-}
-
-/* ICON GRID */
-.icon-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    padding: 80px;
-    text-align: center;
-}
-
-.icon-item img {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
-}
-
-.icon-item span {
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-/* STATUS BAR */
+/* Status Bar */
 .status-bar {
-    margin-top: 60px;
-    padding: 12px 20px;
-
-    background: linear-gradient(#eef3ee, #dde6dd);
-    border: 1px solid #c7d0c7;
-    border-radius: 10px;
-
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    color: #444;
-
-    box-shadow:
-        inset 0 1px 0 #ffffff;
+    color: #aaa;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .main-container2 {
+        gap: 40px;
+        padding: 30px 0;
+    }
+    
+    .hero-section {
+        height: 400px;
+    }
+    
+    .tv-frame {
+        width: 90%;
+    }
+    
+    .tv-screen img {
+        height: 350px;
+    }
+    
+    .tv-overlay h1 {
+        font-size: 2em;
+    }
+    
+    .glass-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .quad-layout {
+        height: 500px;
+    }
+    
+    .preview-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .features-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .features-content {
+        padding-right: 0;
+    }
+    
+    .features-products {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-item {
+        height: 300px;
+    }
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ ТЕЛЕФОНОВ (до 768px) */
+@media screen and (max-width: 768px) {
+    .main-container {
+        padding: 0 15px;
+    }
+    
+    .main-container2 {
+        gap: 30px;
+        padding: 20px 0;
+    }
+    
+    .header-container {
+        padding: 10px 15px;
+    }
+    
+    .hero-section {
+        height: 300px;
+        border-radius: 8px;
+    }
+    
+    .lotus-text {
+        padding: 25px;
+    }
+    
+    .lotus-text h2 {
+        font-size: 2em;
+    }
+    
+    .lotus-text p {
+        font-size: 1em;
+    }
+    
+    .tv-frame {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .tv-screen {
+        padding: 10px;
+    }
+    
+    .tv-screen img {
+        height: 250px;
+    }
+    
+    .tv-overlay {
+        position: static;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .tv-overlay h1 {
+        font-size: 1.8em;
+        margin-bottom: 5px;
+    }
+    
+    .tv-overlay p {
+        font-size: 1em;
+    }
+    
+    .glass-strip {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px 0;
+    }
+    
+    .glass-card {
+        padding: 20px;
+    }
+    
+    .glass-card h3 {
+        font-size: 1.2em;
+    }
+    
+    .quad-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 15px;
+    }
+    
+    .quad-left {
+        flex-direction: row;
+        height: 200px;
+    }
+    
+    .quad-right {
+        height: 400px;
+    }
+    
+    .preview-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .preview-card {
+        height: 250px;
+    }
+    
+    .single-glass {
+        height: 300px;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+    
+    .netherlands-text {
+        padding: 25px;
+        font-size: 1.1em;
+    }
+    
+    .features-title {
+        font-size: 2em;
+    }
+    
+    .features-description {
+        font-size: 1em;
+    }
+    
+    .feature-item {
+        height: 200px;
+    }
+    
+    .status-bar {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 480px) */
+@media screen and (max-width: 480px) {
+    .main-container {
+        padding: 0 10px;
+    }
+    
+    .hero-section {
+        height: 250px;
+    }
+    
+    .lotus-text h2 {
+        font-size: 1.8em;
+    }
+    
+    .lotus-text p {
+        font-size: 0.95em;
+    }
+    
+    .tv-screen img {
+        height: 200px;
+    }
+    
+    .tv-overlay h1 {
+        font-size: 1.6em;
+    }
+    
+    .quad-left {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .quad-small {
+        height: 150px;
+    }
+    
+    .quad-right {
+        height: 300px;
+    }
+    
+    .preview-card {
+        height: 200px;
+    }
+    
+    .single-glass {
+        height: 250px;
+    }
+    
+    .netherlands-text {
+        padding: 20px;
+        font-size: 1em;
+    }
+    
+    .features-title {
+        font-size: 1.8em;
+    }
+    
+    .feature-item {
+        height: 180px;
+    }
+    
+    .tv-titlebar {
+        padding: 8px 15px;
+    }
+    
+    .tv-titlebar span {
+        font-size: 12px;
+    }
+    
+    .tv-lights span {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ ОЧЕНЬ БОЛЬШИХ ЭКРАНОВ (более 1600px) */
+@media screen and (min-width: 1600px) {
+    .main-container {
+        max-width: 1600px;
+    }
+    
+    .hero-section {
+        height: 600px;
+    }
+    
+    .tv-frame {
+        width: 1000px;
+    }
+    
+    .tv-screen img {
+        height: 500px;
+    }
+    
+    .quad-layout {
+        height: 700px;
+    }
+    }
+
