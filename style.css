@@ -1,4 +1,4 @@
-/* Общие стили и сброс (БЕЗ ИЗМЕНЕНИЙ) */
+/* Общие стили и сброс */
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +14,12 @@ body {
     overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
 }
 
-/* Контейнеры (БЕЗ ИЗМЕНЕНИЙ) */
+/* Контейнеры */
 .main-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
-    width: 100%;
+    width: 100%; /* Добавляем явную ширину */
 }
 
 .main-container2 {
@@ -29,7 +29,7 @@ body {
     padding: 40px 0;
 }
 
-/* Header (БЕЗ ИЗМЕНЕНИЙ) */
+/* Header */
 .header-container {
     background: rgba(30, 30, 30, 0.95);
     backdrop-filter: blur(10px);
@@ -37,7 +37,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Section - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Hero Section */
 .hero-section {
     width: 100%;
     height: 500px;
@@ -51,14 +51,14 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-    display: block;
+    display: block; /* Убираем лишние отступы */
 }
 
 .hero-section:hover img {
     transform: scale(1.05);
 }
 
-/* Lotus Text Section - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Lotus Text Section */
 .lotus-text {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -80,7 +80,7 @@ body {
     color: #b0b0b0;
 }
 
-/* TV Wrapper - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* TV Wrapper */
 .tv-wrapper {
     display: flex;
     justify-content: center;
@@ -90,7 +90,7 @@ body {
 
 .tv-frame {
     width: 800px;
-    max-width: 90%; /* ДОБАВЛЕНО для адаптивности */
+    max-width: 100%; /* Гарантируем, что не выйдет за пределы */
     background: #2d2d2d;
     border-radius: 15px;
     overflow: hidden;
@@ -150,7 +150,7 @@ body {
     left: 40px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    max-width: 80%;
+    max-width: 80%; /* Ограничиваем ширину текста */
 }
 
 .tv-overlay h1 {
@@ -164,7 +164,7 @@ body {
     opacity: 0.9;
 }
 
-/* Glass Strip - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Glass Strip */
 .glass-strip {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -199,7 +199,7 @@ body {
     font-size: 0.95em;
 }
 
-/* Quad Layout - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Quad Layout */
 .quad-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -218,7 +218,7 @@ body {
     overflow: hidden;
     border-radius: 10px;
     position: relative;
-    min-height: 0;
+    min-height: 0; /* Важно для корректного сжатия в flex/grid */
 }
 
 .quad-small img {
@@ -237,7 +237,7 @@ body {
     overflow: hidden;
     border-radius: 10px;
     position: relative;
-    min-height: 0;
+    min-height: 0; /* Важно для корректного сжатия в flex/grid */
 }
 
 .quad-right img {
@@ -252,7 +252,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Preview Row - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Preview Row */
 .preview-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -279,7 +279,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Single Glass - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Single Glass */
 .single-glass {
     height: 400px;
     overflow: hidden;
@@ -294,7 +294,7 @@ body {
     display: block;
 }
 
-/* Netherlands Text - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Netherlands Text */
 .netherlands-text {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -306,7 +306,7 @@ body {
     color: #d0d0d0;
 }
 
-/* Features Section - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Features Section */
 .features-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -356,7 +356,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Status Bar - ДОБАВЛЕНО АДАПТИВНОСТИ */
+/* Status Bar */
 .status-bar {
     background: rgba(0, 0, 0, 0.8);
     padding: 10px 20px;
@@ -366,7 +366,7 @@ body {
     color: #aaa;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Позволяем переноситься на маленьких экранах */
 }
 
 /* МЕДИА-ЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) */
@@ -402,7 +402,7 @@ body {
     
     .quad-layout {
         height: 500px;
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr 1.5fr; /* Немного уменьшаем пропорции */
     }
     
     .preview-row {
@@ -419,7 +419,7 @@ body {
     }
     
     .features-products {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Оставляем 2 колонки на планшетах */
     }
     
     .feature-item {
@@ -477,9 +477,6 @@ body {
         padding: 20px 0 0 0;
         text-align: center;
         max-width: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        margin-top: 15px;
-        border-radius: 5px;
     }
     
     .tv-overlay h1 {
@@ -517,7 +514,7 @@ body {
     }
     
     .quad-small {
-        height: 100%;
+        height: 100%; /* Занимаем всю высоту родителя */
     }
     
     .quad-right {
@@ -553,7 +550,7 @@ body {
     }
     
     .features-products {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* На мобилках - 1 колонка */
         gap: 15px;
     }
     
@@ -759,48 +756,8 @@ body {
     }
 }
 
-/* ДОБАВЛЕННЫЙ МЕДИА-ЗАПРОС для очень маленьких экранов (до 360px) */
-@media screen and (max-width: 360px) {
-    .main-container {
-        padding: 0 8px;
-    }
-    
-    .hero-section {
-        height: 180px;
-        border-radius: 6px;
-    }
-    
-    .lotus-text {
-        padding: 15px;
-    }
-    
-    .lotus-text h2 {
-        font-size: 1.4em;
-    }
-    
-    .lotus-text p {
-        font-size: 0.9em;
-    }
-    
-    .tv-screen img {
-        height: 180px;
-    }
-    
-    .quad-small {
-        height: 120px;
-    }
-    
-    .quad-right {
-        height: 250px;
-    }
-    
-    .preview-card {
-        height: 150px;
-    }
-    
-    .single-glass {
-        height: 200px;
-    }
-}
+
+все фотки и тв блоки сделай адаптивными, сделай все адаптивным под размеры
+
 
 
