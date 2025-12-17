@@ -11,6 +11,7 @@ body {
     color: #e0e0e0;
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
 }
 
 /* Контейнеры */
@@ -18,6 +19,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%; /* Добавляем явную ширину */
 }
 
 .main-container2 {
@@ -49,6 +51,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    display: block; /* Убираем лишние отступы */
 }
 
 .hero-section:hover img {
@@ -82,15 +85,18 @@ body {
     display: flex;
     justify-content: center;
     padding: 30px 0;
+    width: 100%;
 }
 
 .tv-frame {
     width: 800px;
+    max-width: 100%; /* Гарантируем, что не выйдет за пределы */
     background: #2d2d2d;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     border: 2px solid #444;
+    margin: 0 auto;
 }
 
 .tv-titlebar {
@@ -135,6 +141,7 @@ body {
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
+    display: block;
 }
 
 .tv-overlay {
@@ -143,6 +150,7 @@ body {
     left: 40px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    max-width: 80%; /* Ограничиваем ширину текста */
 }
 
 .tv-overlay h1 {
@@ -209,6 +217,8 @@ body {
     flex: 1;
     overflow: hidden;
     border-radius: 10px;
+    position: relative;
+    min-height: 0; /* Важно для корректного сжатия в flex/grid */
 }
 
 .quad-small img {
@@ -216,6 +226,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .quad-small:hover img {
@@ -225,6 +236,8 @@ body {
 .quad-right {
     overflow: hidden;
     border-radius: 10px;
+    position: relative;
+    min-height: 0; /* Важно для корректного сжатия в flex/grid */
 }
 
 .quad-right img {
@@ -232,6 +245,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .quad-right:hover img {
@@ -258,6 +272,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    display: block;
 }
 
 .preview-card:hover img {
@@ -276,6 +291,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* Netherlands Text */
@@ -325,6 +341,7 @@ body {
     overflow: hidden;
     border-radius: 10px;
     height: 250px;
+    position: relative;
 }
 
 .feature-image img {
@@ -332,6 +349,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .feature-item:hover .feature-image img {
@@ -348,6 +366,7 @@ body {
     color: #aaa;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    flex-wrap: wrap; /* Позволяем переноситься на маленьких экранах */
 }
 
 /* МЕДИА-ЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) */
@@ -373,12 +392,17 @@ body {
         font-size: 2em;
     }
     
+    .tv-overlay p {
+        font-size: 1em;
+    }
+    
     .glass-strip {
         grid-template-columns: repeat(2, 1fr);
     }
     
     .quad-layout {
         height: 500px;
+        grid-template-columns: 1fr 1.5fr; /* Немного уменьшаем пропорции */
     }
     
     .preview-row {
@@ -395,15 +419,15 @@ body {
     }
     
     .features-products {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* Оставляем 2 колонки на планшетах */
     }
     
     .feature-item {
-        height: 300px;
+        height: 250px;
     }
 }
 
-/* МЕДИА-ЗАПРОСЫ ДЛЯ ТЕЛЕФОНОВ (до 768px) */
+/* МЕДИА-ЗАПРОСЫ ДЛЯ СРЕДНИХ ПЛАНШЕТОВ (600px - 768px) */
 @media screen and (max-width: 768px) {
     .main-container {
         padding: 0 15px;
@@ -419,12 +443,12 @@ body {
     }
     
     .hero-section {
-        height: 300px;
+        height: 350px;
         border-radius: 8px;
     }
     
     .lotus-text {
-        padding: 25px;
+        padding: 30px;
     }
     
     .lotus-text h2 {
@@ -441,22 +465,23 @@ body {
     }
     
     .tv-screen {
-        padding: 10px;
+        padding: 15px;
     }
     
     .tv-screen img {
-        height: 250px;
+        height: 300px;
     }
     
     .tv-overlay {
         position: static;
-        padding: 15px;
+        padding: 20px 0 0 0;
         text-align: center;
+        max-width: 100%;
     }
     
     .tv-overlay h1 {
         font-size: 1.8em;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
     
     .tv-overlay p {
@@ -488,6 +513,10 @@ body {
         height: 200px;
     }
     
+    .quad-small {
+        height: 100%; /* Занимаем всю высоту родителя */
+    }
+    
     .quad-right {
         height: 400px;
     }
@@ -508,7 +537,7 @@ body {
     }
     
     .netherlands-text {
-        padding: 25px;
+        padding: 30px;
         font-size: 1.1em;
     }
     
@@ -520,39 +549,44 @@ body {
         font-size: 1em;
     }
     
+    .features-products {
+        grid-template-columns: 1fr; /* На мобилках - 1 колонка */
+        gap: 15px;
+    }
+    
     .feature-item {
-        height: 200px;
+        height: 220px;
     }
     
     .status-bar {
         flex-direction: column;
-        gap: 5px;
+        gap: 8px;
         align-items: center;
         text-align: center;
         padding: 15px;
     }
 }
 
-/* МЕДИА-ЗАПРОСЫ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 480px) */
-@media screen and (max-width: 480px) {
+/* МЕДИА-ЗАПРОСЫ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 600px) */
+@media screen and (max-width: 600px) {
     .main-container {
-        padding: 0 10px;
+        padding: 0 12px;
     }
     
     .hero-section {
-        height: 250px;
+        height: 280px;
+    }
+    
+    .lotus-text {
+        padding: 25px;
     }
     
     .lotus-text h2 {
         font-size: 1.8em;
     }
     
-    .lotus-text p {
-        font-size: 0.95em;
-    }
-    
     .tv-screen img {
-        height: 200px;
+        height: 250px;
     }
     
     .tv-overlay h1 {
@@ -565,28 +599,92 @@ body {
     }
     
     .quad-small {
+        height: 180px;
+    }
+    
+    .quad-right {
+        height: 350px;
+    }
+    
+    .preview-card {
+        height: 220px;
+    }
+    
+    .single-glass {
+        height: 280px;
+    }
+    
+    .netherlands-text {
+        padding: 25px;
+        font-size: 1em;
+    }
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 480px) */
+@media screen and (max-width: 480px) {
+    .main-container {
+        padding: 0 10px;
+    }
+    
+    .hero-section {
+        height: 220px;
+    }
+    
+    .lotus-text {
+        padding: 20px;
+    }
+    
+    .lotus-text h2 {
+        font-size: 1.6em;
+    }
+    
+    .lotus-text p {
+        font-size: 0.95em;
+    }
+    
+    .tv-screen {
+        padding: 10px;
+    }
+    
+    .tv-screen img {
+        height: 200px;
+    }
+    
+    .tv-overlay h1 {
+        font-size: 1.4em;
+    }
+    
+    .tv-overlay p {
+        font-size: 0.9em;
+    }
+    
+    .glass-card {
+        padding: 15px;
+    }
+    
+    .quad-small {
         height: 150px;
     }
     
     .quad-right {
-        height: 300px;
+        height: 280px;
     }
     
     .preview-card {
-        height: 200px;
+        height: 180px;
     }
     
     .single-glass {
-        height: 250px;
+        height: 220px;
     }
     
     .netherlands-text {
         padding: 20px;
-        font-size: 1em;
+        font-size: 0.95em;
     }
     
     .features-title {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
     
     .feature-item {
@@ -628,5 +726,32 @@ body {
     .quad-layout {
         height: 700px;
     }
-    }
+}
 
+/* МЕДИА-ЗАПРОСЫ ДЛЯ СВЕРХШИРОКИХ ЭКРАНОВ (более 2000px) */
+@media screen and (min-width: 2000px) {
+    .main-container {
+        max-width: 1800px;
+    }
+    
+    .hero-section {
+        height: 700px;
+    }
+    
+    .tv-frame {
+        width: 1200px;
+    }
+    
+    .tv-screen img {
+        height: 600px;
+    }
+    
+    .quad-layout {
+        height: 800px;
+    }
+    
+    .glass-strip {
+        gap: 30px;
+        padding: 40px 0;
+    }
+}
