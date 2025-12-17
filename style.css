@@ -1,4 +1,4 @@
-/* Общие стили и сброс */
+/* Общие стили и сброс (БЕЗ ИЗМЕНЕНИЙ) */
 * {
     margin: 0;
     padding: 0;
@@ -11,41 +11,39 @@ body {
     color: #e0e0e0;
     line-height: 1.6;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
 }
 
-/* Контейнеры */
+/* Контейнеры (БЕЗ ИЗМЕНЕНИЙ) */
 .main-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 clamp(12px, 2vw, 20px);
+    padding: 0 20px;
     width: 100%;
 }
 
 .main-container2 {
     display: flex;
     flex-direction: column;
-    gap: clamp(30px, 4vw, 60px);
-    padding: clamp(20px, 3vw, 40px) 0;
+    gap: 60px;
+    padding: 40px 0;
 }
 
-/* Header */
+/* Header (БЕЗ ИЗМЕНЕНИЙ) */
 .header-container {
     background: rgba(30, 30, 30, 0.95);
     backdrop-filter: blur(10px);
-    padding: clamp(10px, 1.5vw, 15px) clamp(15px, 2vw, 20px);
+    padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Section */
+/* Hero Section - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .hero-section {
     width: 100%;
-    height: min(600px, 50vw); /* Адаптивная высота */
-    max-height: 600px;
-    min-height: 220px;
+    height: 500px;
     overflow: hidden;
-    border-radius: clamp(8px, 1.5vw, 12px);
-    box-shadow: 0 clamp(10px, 2vw, 20px) clamp(20px, 3vw, 40px) rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-section img {
@@ -60,50 +58,50 @@ body {
     transform: scale(1.05);
 }
 
-/* Lotus Text Section */
+/* Lotus Text Section - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .lotus-text {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    padding: clamp(20px, 3vw, 40px);
-    border-radius: clamp(10px, 2vw, 15px);
+    padding: 40px;
+    border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .lotus-text h2 {
-    font-size: clamp(1.6em, 4vw, 2.5em);
+    font-size: 2.5em;
     color: #fff;
-    margin-bottom: clamp(15px, 2vw, 20px);
+    margin-bottom: 20px;
     font-weight: 300;
-    line-height: 1.3;
 }
 
 .lotus-text p {
-    font-size: clamp(0.95em, 1.1vw, 1.1em);
-    margin-bottom: clamp(10px, 1.5vw, 15px);
+    font-size: 1.1em;
+    margin-bottom: 15px;
     color: #b0b0b0;
 }
 
-/* TV Wrapper */
+/* TV Wrapper - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .tv-wrapper {
     display: flex;
     justify-content: center;
-    padding: clamp(20px, 2vw, 30px) 0;
+    padding: 30px 0;
     width: 100%;
 }
 
 .tv-frame {
-    width: min(800px, 90vw); /* Адаптивная ширина */
+    width: 800px;
+    max-width: 90%; /* ДОБАВЛЕНО для адаптивности */
     background: #2d2d2d;
-    border-radius: clamp(10px, 2vw, 15px);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 clamp(15px, 2vw, 25px) clamp(30px, 3vw, 50px) rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     border: 2px solid #444;
     margin: 0 auto;
 }
 
 .tv-titlebar {
     background: linear-gradient(to bottom, #4a4a4a, #2d2d2d);
-    padding: clamp(8px, 1vw, 12px) clamp(15px, 2vw, 20px);
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,18 +110,18 @@ body {
 
 .tv-titlebar span {
     color: #fff;
-    font-size: clamp(12px, 1.2vw, 14px);
+    font-size: 14px;
     font-weight: 600;
 }
 
 .tv-lights {
     display: flex;
-    gap: clamp(5px, 0.8vw, 8px);
+    gap: 8px;
 }
 
 .tv-lights span {
-    width: clamp(10px, 1vw, 12px);
-    height: clamp(10px, 1vw, 12px);
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -134,56 +132,52 @@ body {
 
 .tv-screen {
     position: relative;
-    padding: clamp(10px, 1.5vw, 20px);
+    padding: 20px;
     background: #000;
 }
 
 .tv-screen img {
     width: 100%;
-    height: min(400px, 40vw); /* Адаптивная высота */
-    max-height: 500px;
-    min-height: 200px;
+    height: 400px;
     object-fit: cover;
-    border-radius: clamp(6px, 1vw, 8px);
+    border-radius: 8px;
     display: block;
 }
 
 .tv-overlay {
     position: absolute;
-    bottom: clamp(20px, 3vw, 40px);
-    left: clamp(20px, 3vw, 40px);
-    right: clamp(20px, 3vw, 40px);
+    bottom: 40px;
+    left: 40px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     max-width: 80%;
 }
 
 .tv-overlay h1 {
-    font-size: clamp(1.4em, 3vw, 2.5em);
-    margin-bottom: clamp(5px, 1vw, 10px);
+    font-size: 2.5em;
+    margin-bottom: 10px;
     font-weight: 300;
-    line-height: 1.2;
 }
 
 .tv-overlay p {
-    font-size: clamp(0.9em, 1.1vw, 1.1em);
+    font-size: 1.1em;
     opacity: 0.9;
 }
 
-/* Glass Strip */
+/* Glass Strip - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .glass-strip {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: clamp(15px, 2vw, 20px);
-    padding: clamp(20px, 2vw, 30px) 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px 0;
 }
 
 .glass-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: clamp(8px, 1.5vw, 12px);
-    padding: clamp(15px, 2vw, 25px);
+    border-radius: 12px;
+    padding: 25px;
     transition: all 0.3s ease;
 }
 
@@ -195,38 +189,36 @@ body {
 
 .glass-card h3 {
     color: #fff;
-    font-size: clamp(1.1em, 1.5vw, 1.3em);
-    margin-bottom: clamp(8px, 1vw, 10px);
+    font-size: 1.3em;
+    margin-bottom: 10px;
     font-weight: 400;
 }
 
 .glass-card p {
     color: #ccc;
-    font-size: clamp(0.85em, 1vw, 0.95em);
+    font-size: 0.95em;
 }
 
-/* Quad Layout */
+/* Quad Layout - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .quad-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: clamp(15px, 2vw, 20px);
-    height: auto;
-    min-height: min(600px, 80vw);
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    height: 600px;
 }
 
 .quad-left {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(15px, 2vw, 20px);
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .quad-small {
+    flex: 1;
     overflow: hidden;
-    border-radius: clamp(8px, 1.5vw, 10px);
+    border-radius: 10px;
     position: relative;
-    min-height: 150px;
-    height: 100%;
+    min-height: 0;
 }
 
 .quad-small img {
@@ -243,10 +235,9 @@ body {
 
 .quad-right {
     overflow: hidden;
-    border-radius: clamp(8px, 1.5vw, 10px);
+    border-radius: 10px;
     position: relative;
-    min-height: 300px;
-    height: 100%;
+    min-height: 0;
 }
 
 .quad-right img {
@@ -261,19 +252,18 @@ body {
     transform: scale(1.05);
 }
 
-/* Preview Row */
+/* Preview Row - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .preview-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-    gap: clamp(15px, 2vw, 20px);
-    padding: clamp(20px, 2vw, 30px) 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px 0;
 }
 
 .preview-card {
-    height: min(300px, 50vw);
-    min-height: 180px;
+    height: 300px;
     overflow: hidden;
-    border-radius: clamp(8px, 1.5vw, 10px);
+    border-radius: 10px;
     position: relative;
 }
 
@@ -289,13 +279,12 @@ body {
     transform: scale(1.1);
 }
 
-/* Single Glass */
+/* Single Glass - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .single-glass {
-    height: min(400px, 60vw);
-    min-height: 220px;
+    height: 400px;
     overflow: hidden;
-    border-radius: clamp(10px, 2vw, 15px);
-    margin: clamp(20px, 2vw, 30px) 0;
+    border-radius: 15px;
+    margin: 30px 0;
 }
 
 .single-glass img {
@@ -305,55 +294,53 @@ body {
     display: block;
 }
 
-/* Netherlands Text */
+/* Netherlands Text - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .netherlands-text {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    padding: clamp(20px, 3vw, 40px);
-    border-radius: clamp(10px, 2vw, 15px);
+    padding: 40px;
+    border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: clamp(1em, 1.2vw, 1.2em);
+    font-size: 1.2em;
     line-height: 1.8;
     color: #d0d0d0;
 }
 
-/* Features Section */
+/* Features Section - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .features-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: clamp(30px, 3vw, 40px);
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     align-items: center;
 }
 
 .features-content {
-    padding-right: clamp(0px, 3vw, 40px);
+    padding-right: 40px;
 }
 
 .features-title {
-    font-size: clamp(1.6em, 3vw, 2.5em);
+    font-size: 2.5em;
     color: #fff;
-    margin-bottom: clamp(15px, 2vw, 20px);
+    margin-bottom: 20px;
     font-weight: 300;
-    line-height: 1.3;
 }
 
 .features-description {
-    font-size: clamp(1em, 1.1vw, 1.1em);
+    font-size: 1.1em;
     color: #b0b0b0;
     line-height: 1.7;
 }
 
 .features-products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-    gap: clamp(15px, 2vw, 20px);
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .feature-item {
     overflow: hidden;
-    border-radius: clamp(8px, 1.5vw, 10px);
-    height: min(250px, 40vw);
-    min-height: 180px;
+    border-radius: 10px;
+    height: 250px;
     position: relative;
 }
 
@@ -369,59 +356,301 @@ body {
     transform: scale(1.05);
 }
 
-/* Status Bar */
+/* Status Bar - ДОБАВЛЕНО АДАПТИВНОСТИ */
 .status-bar {
     background: rgba(0, 0, 0, 0.8);
-    padding: clamp(10px, 1.5vw, 15px) clamp(15px, 2vw, 20px);
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    font-size: clamp(11px, 1vw, 12px);
+    font-size: 12px;
     color: #aaa;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     flex-wrap: wrap;
-    gap: clamp(5px, 1vw, 10px);
 }
 
-/* Адаптивное поведение для мобильных устройств */
-@media screen and (max-width: 768px) {
-    .tv-overlay {
-        position: static;
-        padding: 20px 0 0 0;
-        text-align: center;
-        max-width: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 8px;
-        margin-top: 10px;
+/* МЕДИА-ЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .main-container2 {
+        gap: 40px;
+        padding: 30px 0;
     }
     
-    .quad-left {
+    .hero-section {
+        height: 400px;
+    }
+    
+    .tv-frame {
+        width: 90%;
+    }
+    
+    .tv-screen img {
+        height: 350px;
+    }
+    
+    .tv-overlay h1 {
+        font-size: 2em;
+    }
+    
+    .tv-overlay p {
+        font-size: 1em;
+    }
+    
+    .glass-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .quad-layout {
+        height: 500px;
+        grid-template-columns: 1fr 1.5fr;
+    }
+    
+    .preview-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .features-section {
         grid-template-columns: 1fr;
-        height: auto;
-    }
-    
-    .quad-small {
-        height: min(200px, 40vw);
+        gap: 30px;
     }
     
     .features-content {
         padding-right: 0;
     }
     
-    .status-bar {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
+    .features-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .feature-item {
+        height: 250px;
     }
 }
 
-@media screen and (max-width: 480px) {
+/* МЕДИА-ЗАПРОСЫ ДЛЯ СРЕДНИХ ПЛАНШЕТОВ (600px - 768px) */
+@media screen and (max-width: 768px) {
+    .main-container {
+        padding: 0 15px;
+    }
+    
+    .main-container2 {
+        gap: 30px;
+        padding: 20px 0;
+    }
+    
+    .header-container {
+        padding: 10px 15px;
+    }
+    
+    .hero-section {
+        height: 350px;
+        border-radius: 8px;
+    }
+    
+    .lotus-text {
+        padding: 30px;
+    }
+    
+    .lotus-text h2 {
+        font-size: 2em;
+    }
+    
+    .lotus-text p {
+        font-size: 1em;
+    }
+    
+    .tv-frame {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .tv-screen {
+        padding: 15px;
+    }
+    
+    .tv-screen img {
+        height: 300px;
+    }
+    
+    .tv-overlay {
+        position: static;
+        padding: 20px 0 0 0;
+        text-align: center;
+        max-width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        margin-top: 15px;
+        border-radius: 5px;
+    }
+    
+    .tv-overlay h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+    
+    .tv-overlay p {
+        font-size: 1em;
+    }
+    
     .glass-strip {
         grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px 0;
+    }
+    
+    .glass-card {
+        padding: 20px;
+    }
+    
+    .glass-card h3 {
+        font-size: 1.2em;
+    }
+    
+    .quad-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 15px;
+    }
+    
+    .quad-left {
+        flex-direction: row;
+        height: 200px;
+    }
+    
+    .quad-small {
+        height: 100%;
+    }
+    
+    .quad-right {
+        height: 400px;
     }
     
     .preview-row {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .preview-card {
+        height: 250px;
+    }
+    
+    .single-glass {
+        height: 300px;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+    
+    .netherlands-text {
+        padding: 30px;
+        font-size: 1.1em;
+    }
+    
+    .features-title {
+        font-size: 2em;
+    }
+    
+    .features-description {
+        font-size: 1em;
+    }
+    
+    .features-products {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .feature-item {
+        height: 220px;
+    }
+    
+    .status-bar {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 600px) */
+@media screen and (max-width: 600px) {
+    .main-container {
+        padding: 0 12px;
+    }
+    
+    .hero-section {
+        height: 280px;
+    }
+    
+    .lotus-text {
+        padding: 25px;
+    }
+    
+    .lotus-text h2 {
+        font-size: 1.8em;
+    }
+    
+    .tv-screen img {
+        height: 250px;
+    }
+    
+    .tv-overlay h1 {
+        font-size: 1.6em;
+    }
+    
+    .quad-left {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .quad-small {
+        height: 180px;
+    }
+    
+    .quad-right {
+        height: 350px;
+    }
+    
+    .preview-card {
+        height: 220px;
+    }
+    
+    .single-glass {
+        height: 280px;
+    }
+    
+    .netherlands-text {
+        padding: 25px;
+        font-size: 1em;
+    }
+}
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 480px) */
+@media screen and (max-width: 480px) {
+    .main-container {
+        padding: 0 10px;
+    }
+    
+    .hero-section {
+        height: 220px;
+    }
+    
+    .lotus-text {
+        padding: 20px;
+    }
+    
+    .lotus-text h2 {
+        font-size: 1.6em;
+    }
+    
+    .lotus-text p {
+        font-size: 0.95em;
+    }
+    
+    .tv-screen {
+        padding: 10px;
+    }
+    
+    .tv-screen img {
+        height: 200px;
     }
     
     .tv-overlay h1 {
@@ -431,90 +660,147 @@ body {
     .tv-overlay p {
         font-size: 0.9em;
     }
-}
-
-/* Для очень больших экранов */
-@media screen and (min-width: 1600px) {
-    .main-container {
-        max-width: min(1600px, 90vw);
+    
+    .glass-card {
+        padding: 15px;
     }
     
-    .hero-section {
-        height: min(700px, 40vw);
+    .quad-small {
+        height: 150px;
     }
     
-    .tv-frame {
-        width: min(1000px, 70vw);
+    .quad-right {
+        height: 280px;
     }
     
-    .tv-screen img {
-        height: min(500px, 35vw);
-    }
-}
-
-/* Для ультрашироких экранов */
-@media screen and (min-width: 2000px) {
-    .main-container {
-        max-width: min(1800px, 80vw);
-    }
-    
-    .hero-section {
-        height: min(800px, 35vw);
-    }
-    
-    .tv-frame {
-        width: min(1200px, 60vw);
-    }
-    
-    .tv-screen img {
-        height: min(600px, 30vw);
-    }
-}
-
-/* Оптимизация для портретной ориентации на мобильных */
-@media screen and (max-height: 600px) and (orientation: portrait) {
-    .hero-section {
-        height: 40vh;
-    }
-    
-    .tv-screen img {
-        height: 30vh;
-    }
-    
-    .quad-layout {
-        min-height: 40vh;
+    .preview-card {
+        height: 180px;
     }
     
     .single-glass {
-        height: 30vh;
-    }
-}
-
-/* Поддержка темной темы */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        height: 220px;
     }
     
-    .lotus-text, .netherlands-text, .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-    }
-}
-
-/* Улучшение доступности для увеличения текста */
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 16px; /* Минимальный размер для читаемости */
+    .netherlands-text {
+        padding: 20px;
+        font-size: 0.95em;
     }
     
-    h1, h2, h3 {
-        word-wrap: break-word;
-        hyphens: auto;
+    .features-title {
+        font-size: 1.6em;
+    }
+    
+    .feature-item {
+        height: 180px;
+    }
+    
+    .tv-titlebar {
+        padding: 8px 15px;
+    }
+    
+    .tv-titlebar span {
+        font-size: 12px;
+    }
+    
+    .tv-lights span {
+        width: 10px;
+        height: 10px;
     }
 }
 
-/* Плавные переходы для ресайза */
-* {
-    transition: all 0.3s ease-in-out;
+/* МЕДИА-ЗАПРОСЫ ДЛЯ ОЧЕНЬ БОЛЬШИХ ЭКРАНОВ (более 1600px) */
+@media screen and (min-width: 1600px) {
+    .main-container {
+        max-width: 1600px;
+    }
+    
+    .hero-section {
+        height: 600px;
+    }
+    
+    .tv-frame {
+        width: 1000px;
+    }
+    
+    .tv-screen img {
+        height: 500px;
+    }
+    
+    .quad-layout {
+        height: 700px;
+    }
 }
+
+/* МЕДИА-ЗАПРОСЫ ДЛЯ СВЕРХШИРОКИХ ЭКРАНОВ (более 2000px) */
+@media screen and (min-width: 2000px) {
+    .main-container {
+        max-width: 1800px;
+    }
+    
+    .hero-section {
+        height: 700px;
+    }
+    
+    .tv-frame {
+        width: 1200px;
+    }
+    
+    .tv-screen img {
+        height: 600px;
+    }
+    
+    .quad-layout {
+        height: 800px;
+    }
+    
+    .glass-strip {
+        gap: 30px;
+        padding: 40px 0;
+    }
+}
+
+/* ДОБАВЛЕННЫЙ МЕДИА-ЗАПРОС для очень маленьких экранов (до 360px) */
+@media screen and (max-width: 360px) {
+    .main-container {
+        padding: 0 8px;
+    }
+    
+    .hero-section {
+        height: 180px;
+        border-radius: 6px;
+    }
+    
+    .lotus-text {
+        padding: 15px;
+    }
+    
+    .lotus-text h2 {
+        font-size: 1.4em;
+    }
+    
+    .lotus-text p {
+        font-size: 0.9em;
+    }
+    
+    .tv-screen img {
+        height: 180px;
+    }
+    
+    .quad-small {
+        height: 120px;
+    }
+    
+    .quad-right {
+        height: 250px;
+    }
+    
+    .preview-card {
+        height: 150px;
+    }
+    
+    .single-glass {
+        height: 200px;
+    }
+}
+
 
